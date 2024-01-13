@@ -1,6 +1,11 @@
 const express = require("express");
- 
+const productRouters = require("./routers/products");
+
 const apiServer = express(); // this one errore ()
+
+
+apiServer.use("/products", productRouters);
+
 apiServer.get("/", function(req,res){
     res.send("Hello Worled Express");
 });
